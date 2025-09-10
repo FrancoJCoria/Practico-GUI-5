@@ -9,5 +9,10 @@ package com.mycompany.practicogui5;
  * @author FRANCO
  */
 public class DirectorioTelefonico {
+    private int dni;
+    private String nombre;
+    private String apellido;
+    private String ciudad;
+    private String direccion;
     
 }
