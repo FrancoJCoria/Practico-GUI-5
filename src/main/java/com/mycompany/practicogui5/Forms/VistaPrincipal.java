@@ -144,7 +144,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        for(JInternalFrame frame : jDesktopPane1.getAllFrames()){
+            frame.dispose();
+        }
+        
+        
+        VistaAgregarCliente fa = new VistaAgregarCliente();
+        jDesktopPane1.add(fa);
+        fa.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
