@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.practicogui5;
+package com.mycompany.practicogui5.Clases;
 
+import com.mycompany.practicogui5.Clases.Contacto;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -17,12 +18,9 @@ import java.util.TreeMap;
  */
 public class Directorio {
 
-    Scanner consola = new Scanner(System.in);
-    TreeMap<Long, Contacto> mapaContactos;
+    TreeMap<Long, Contacto> mapaContactos = new TreeMap<>();
 
-    public void agregarContacto(Contacto nuevoContacto) {
-        System.out.println("Ingrese el numero de telefono");
-        long telefono = consola.nextLong();
+    public void agregarContacto(Contacto nuevoContacto,long telefono) {
         mapaContactos.put(telefono, nuevoContacto);
     }
 
@@ -32,17 +30,17 @@ public class Directorio {
 
     public Set<Long> buscarTelefono(String apellido) {
         Iterator<Map.Entry<Long, Contacto>> it = mapaContactos.entrySet().iterator();
-
+        Set<Long> clavesCoincidentes=new HashSet<>();
         while (it.hasNext()) {
             Map.Entry<Long, Contacto> actual = it.next();
             Contacto c = actual.getValue();
 
             if (c.getApellido().equalsIgnoreCase(apellido)) {
-                return mapaContactos.keySet();
+                clavesCoincidentes.add(actual.getKey());
             }
 
         }
-        return null;
+        return clavesCoincidentes;
     }
 
     public ArrayList<Contacto> BuscarContactos(String ciudad) {
@@ -56,7 +54,7 @@ public class Directorio {
                 listaContactos.add(c);
             }
         }
-        return null;
+        return listaContactos;
     }
     
     public void borrarContacto(long telefono){
