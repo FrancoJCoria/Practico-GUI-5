@@ -4,15 +4,18 @@
  */
 package com.mycompany.practicogui5.Forms;
 
+import com.mycompany.practicogui5.Clases.Directorio;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author FRANCO
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VistaPrincipal
-     */
+    static Directorio directorio = new Directorio();
+    static List<String> listaCiudades = new ArrayList<>();
     public VistaPrincipal() {
         initComponents();
     }
