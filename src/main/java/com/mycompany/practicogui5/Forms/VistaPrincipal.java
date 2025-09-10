@@ -109,6 +109,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu3.setText("Ciudades");
 
         jMenuItem4.setText("Agregar Ciudad");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem4);
 
         jMenuBar1.add(jMenu3);
@@ -163,6 +168,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
         fa.setVisible(true);  
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        VistaAgregarCiudad ag = new VistaAgregarCiudad();
+        jDesktopPane1.add(ag);
+        ag.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -197,6 +208,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
