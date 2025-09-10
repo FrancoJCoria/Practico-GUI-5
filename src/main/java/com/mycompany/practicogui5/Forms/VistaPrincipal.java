@@ -7,6 +7,7 @@ package com.mycompany.practicogui5.Forms;
 import com.mycompany.practicogui5.Clases.Directorio;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -48,11 +49,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 763, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+            .addGap(0, 421, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Clientes");
@@ -137,7 +138,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
+        
+         for(JInternalFrame frame : jDesktopPane1.getAllFrames()){
+            frame.dispose();
+        }
+        
+        
         VistaBuscarCliente fa = new VistaBuscarCliente();
         jDesktopPane1.add(fa);
         fa.setVisible(true);
@@ -146,18 +152,31 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        for(JInternalFrame frame : jDesktopPane1.getAllFrames()){
+            frame.dispose();
+        }
+        
+        
         VistaBorrarCliente fa = new VistaBorrarCliente();
         jDesktopPane1.add(fa);
         fa.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+         for(JInternalFrame frame : jDesktopPane1.getAllFrames()){
+            frame.dispose();
+        }
+        
         VistaBuscarClienteCiudad fa = new VistaBuscarClienteCiudad();
         jDesktopPane1.add(fa);
         fa.setVisible(true);          // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        for(JInternalFrame frame : jDesktopPane1.getAllFrames()){
+            frame.dispose();
+        }
+        
         VistaBuscarTelefonoPorApellido fa = new VistaBuscarTelefonoPorApellido();
         jDesktopPane1.add(fa);
         fa.setVisible(true);  
