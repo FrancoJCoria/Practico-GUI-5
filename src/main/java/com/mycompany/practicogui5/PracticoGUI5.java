@@ -7,6 +7,7 @@ package com.mycompany.practicogui5;
 
 import com.mycompany.practicogui5.Clases.Directorio;
 import com.mycompany.practicogui5.Clases.Contacto;
+import com.mycompany.practicogui5.Forms.VistaPrincipal;
 import java.util.Scanner;
 import java.util.TreeSet;
 
@@ -17,6 +18,12 @@ import java.util.TreeSet;
 public class PracticoGUI5 {
 
     public static void main(String[] args) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VistaPrincipal().setVisible(true);
+
+            }
+          });
         TreeSet<Contacto> setContactos = new TreeSet<>();
         Scanner consola = new Scanner(System.in);
         Directorio directorio1 = new Directorio();

@@ -86,6 +86,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Directorio");
 
         jMenuItem5.setText("Buscar Clientes por Ciudad");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuItem6.setText("Buscar Telefono por Apellido");
@@ -125,11 +130,24 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
+        VistaBuscarCliente fa = new VistaBuscarCliente();
+        jDesktopPane1.add(fa);
+        fa.setVisible(true);
+
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+        VistaBorrarCliente fa = new VistaBorrarCliente();
+        jDesktopPane1.add(fa);
+        fa.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        VistaBuscarClienteCiudad fa = new VistaBuscarClienteCiudad();
+        jDesktopPane1.add(fa);
+        fa.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
