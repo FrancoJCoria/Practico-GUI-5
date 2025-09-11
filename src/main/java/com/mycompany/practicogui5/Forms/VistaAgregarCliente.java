@@ -212,7 +212,7 @@ public class VistaAgregarCliente extends javax.swing.JInternalFrame {
                 String ciudad = (String) Ciudad.getSelectedItem();
                 Contacto nuevoContacto = new Contacto(dni, nombre, apellido, ciudad, domicilio);
                 directorio.agregarContacto(nuevoContacto, telefono);
-
+                JOptionPane.showMessageDialog(this, "Cliente añadido exitosamente!", "Cliente agregado", JOptionPane.INFORMATION_MESSAGE);
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "El DNI y el Telefono deben ser numericos", "Error", JOptionPane.ERROR_MESSAGE);
             }
