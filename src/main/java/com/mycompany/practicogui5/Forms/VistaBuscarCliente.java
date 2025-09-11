@@ -25,9 +25,9 @@ public class VistaBuscarCliente extends javax.swing.JInternalFrame {
                     if(c!=null){
                         jTextField3.setText(c.getDNI()+"");
                         jTextField4.setText(c.getApellido());
-                        jTextField5.setText(c.getDireccion());
-                        jTextField6.setText(c.getNombre());
-                        jTextField7.setText(c.getCiudad());
+                        jTextField5.setText(c.getNombre());
+                        jTextField7.setText(c.getDireccion());
+                        jTextField6.setText(c.getCiudad());
                     }
                 }
             }

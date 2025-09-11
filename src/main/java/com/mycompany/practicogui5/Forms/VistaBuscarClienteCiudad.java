@@ -4,7 +4,10 @@
  */
 package com.mycompany.practicogui5.Forms;
 
+import com.mycompany.practicogui5.Clases.Contacto;
 import static com.mycompany.practicogui5.Forms.VistaPrincipal.listaCiudades;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,11 +21,44 @@ public class VistaBuscarClienteCiudad extends javax.swing.JInternalFrame {
     public VistaBuscarClienteCiudad() {
         initComponents();
 
-        for (String ciudad : listaCiudades) {
+        for (String ciudad : VistaPrincipal.listaCiudades) {
             Ciudades.addItem(ciudad);
 
         }
+        
+        Ciudades.addActionListener(e -> buscarPorCiudad());
     }
+    
+    private void buscarPorCiudad(){
+        
+        String ciudadSeleccionada = (String) Ciudades.getSelectedItem();
+        
+        if(ciudadSeleccionada != null && !ciudadSeleccionada.isEmpty()){
+            
+            ArrayList<Contacto> contactos = VistaPrincipal.directorio.BuscarContactos(ciudadSeleccionada);
+            
+            DefaultTableModel modelo = (DefaultTableModel) jTable2.getModel();
+            modelo.setRowCount(0);
+            
+            for(Long telefono : VistaPrincipal.directorio.getMapaContactos().keySet()){
+                Contacto c = VistaPrincipal.directorio.getMapaContactos().get(telefono);
+                if(c.getCiudad().equalsIgnoreCase((ciudadSeleccionada))){
+                    modelo.addRow(new Object[]{
+                    c.getDNI(),
+                    c.getApellido(),
+                    c.getNombre(),
+                    c.getDireccion(),
+                    c.getCiudad(),
+                    telefono
+                    
+                    
+                });
+                
+            }
+            
+        }
+        
+    }}
 
     /**
      * This method is called from within the constructor to initialize the form.
