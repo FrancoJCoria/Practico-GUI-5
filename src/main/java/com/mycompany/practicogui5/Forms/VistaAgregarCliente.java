@@ -9,6 +9,8 @@ import static com.mycompany.practicogui5.Forms.VistaPrincipal.directorio;
 import static com.mycompany.practicogui5.Forms.VistaPrincipal.listaCiudades;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,18 +19,10 @@ import javax.swing.JOptionPane;
  */
 public class VistaAgregarCliente extends javax.swing.JInternalFrame {
 
-
     public VistaAgregarCliente() {
         initComponents();
 
-        listaCiudades.add("Villa Mercedes");
-        listaCiudades.add("Fraga");
-        listaCiudades.add("General Pico");
-        listaCiudades.add("Merlo");
-        listaCiudades.add("Juana Koslay");
-        listaCiudades.add("El Trapiche");
-
-        for (String ciudad : listaCiudades) {
+       for (String ciudad : listaCiudades) {
             Ciudad.addItem(ciudad);
 
         }
@@ -216,10 +210,11 @@ public class VistaAgregarCliente extends javax.swing.JInternalFrame {
                 String domicilio = Domicilio.getText();
                 long telefono = Long.parseLong(Telefono.getText());
                 String ciudad = (String) Ciudad.getSelectedItem();
-                Contacto nuevoContacto = new Contacto(dni,nombre,apellido,ciudad,domicilio);
+                Contacto nuevoContacto = new Contacto(dni, nombre, apellido, ciudad, domicilio);
                 directorio.agregarContacto(nuevoContacto, telefono);
+
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(this,"El DNI y el Telefono deben ser numericos","Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "El DNI y el Telefono deben ser numericos", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
         }

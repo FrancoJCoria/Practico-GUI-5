@@ -20,7 +20,7 @@ public class Directorio {
 
     TreeMap<Long, Contacto> mapaContactos = new TreeMap<>();
 
-    public void agregarContacto(Contacto nuevoContacto,long telefono) {
+    public void agregarContacto(Contacto nuevoContacto, long telefono) {
         mapaContactos.put(telefono, nuevoContacto);
     }
 
@@ -30,7 +30,7 @@ public class Directorio {
 
     public Set<Long> buscarTelefono(String apellido) {
         Iterator<Map.Entry<Long, Contacto>> it = mapaContactos.entrySet().iterator();
-        Set<Long> clavesCoincidentes=new HashSet<>();
+        Set<Long> clavesCoincidentes = new HashSet<>();
         while (it.hasNext()) {
             Map.Entry<Long, Contacto> actual = it.next();
             Contacto c = actual.getValue();
@@ -56,9 +56,14 @@ public class Directorio {
         }
         return listaContactos;
     }
-    
-    public void borrarContacto(long telefono){
+
+    public void borrarContacto(long telefono) {
         mapaContactos.remove(telefono);
     }
 
+    public TreeMap<Long, Contacto> getMapaContactos() {
+        return mapaContactos;
+    }
+
+    
 }

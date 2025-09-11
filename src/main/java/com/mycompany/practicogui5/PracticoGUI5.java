@@ -5,7 +5,7 @@
 package com.mycompany.practicogui5;
 
 
-import com.mycompany.practicogui5.Clases.Directorio;
+
 import com.mycompany.practicogui5.Clases.Contacto;
 import com.mycompany.practicogui5.Forms.VistaPrincipal;
 import java.util.Scanner;

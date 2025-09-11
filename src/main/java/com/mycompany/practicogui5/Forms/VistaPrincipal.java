@@ -15,10 +15,17 @@ import javax.swing.JInternalFrame;
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
-    static Directorio directorio = new Directorio();
+    public static Directorio directorio = new Directorio();
     static List<String> listaCiudades = new ArrayList<>();
     public VistaPrincipal() {
         initComponents();
+         listaCiudades.add("Villa Mercedes");
+        listaCiudades.add("Fraga");
+        listaCiudades.add("General Pico");
+        listaCiudades.add("Merlo");
+        listaCiudades.add("Juana Koslay");
+        listaCiudades.add("El Trapiche");
+
     }
 
     /**
@@ -199,6 +206,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         fa.setVisible(true);  
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         VistaAgregarCiudad ag = new VistaAgregarCiudad();
         jDesktopPane1.add(ag);
@@ -209,9 +217,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jMenu4MouseClicked
-
-
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
