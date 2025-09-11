@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author LaMaquina
+ * @author Juan
  */
 public class VistaAgregarCiudad extends javax.swing.JInternalFrame {
 
@@ -35,7 +35,7 @@ public class VistaAgregarCiudad extends javax.swing.JInternalFrame {
         jTextField2 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
-        jButton1.setText("Guardad");
+        jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -95,14 +95,15 @@ public class VistaAgregarCiudad extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String NombreCiudad;
-        NombreCiudad = JTextField2.getText();
-        
-        if(NombreCiudad.isEmpty()){
+        NombreCiudad = jTextField2.getText();
+
+        if (NombreCiudad.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "agrege una ciudad al campo");
+        } else {
             VistaPrincipal.listaCiudades.add(NombreCiudad);
-            JOptionPane.showMessageDialog(this,"ciudad" + NombreCiudad + "guardado correctamente");
+            JOptionPane.showMessageDialog(this, "Ciudad guardada correctamente!");
             jTextField2.setText("");
-        }else{
-            JOptionPane.showMessageDialog(this,"agrege una ciudad al campo");
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -119,13 +120,4 @@ public class VistaAgregarCiudad extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 
-    private static class JTextField2 {
-
-        private static String getText() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        public JTextField2() {
-        }
-    }
 }

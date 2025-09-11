@@ -15,10 +15,17 @@ import javax.swing.JInternalFrame;
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
-    static Directorio directorio = new Directorio();
+    public static Directorio directorio = new Directorio();
     static List<String> listaCiudades = new ArrayList<>();
     public VistaPrincipal() {
         initComponents();
+         listaCiudades.add("Villa Mercedes");
+        listaCiudades.add("Fraga");
+        listaCiudades.add("General Pico");
+        listaCiudades.add("Merlo");
+        listaCiudades.add("Juana Koslay");
+        listaCiudades.add("El Trapiche");
+
     }
 
     /**
@@ -199,46 +206,21 @@ public class VistaPrincipal extends javax.swing.JFrame {
         fa.setVisible(true);  
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-<<<<<<< HEAD
+
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         VistaAgregarCiudad ag = new VistaAgregarCiudad();
         jDesktopPane1.add(ag);
         ag.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
-=======
+
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jMenu4MouseClicked
->>>>>>> 307aafde9a698874c8bdc42367f6b38eb331e67c
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-   
     
+    
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
