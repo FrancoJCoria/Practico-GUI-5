@@ -4,10 +4,7 @@
  */
 package com.mycompany.practicogui5.Clases;
 
-/**
- *
- * @author FRANCO
- */
+
 public class Contacto {
     private int DNI;
     private String nombre;

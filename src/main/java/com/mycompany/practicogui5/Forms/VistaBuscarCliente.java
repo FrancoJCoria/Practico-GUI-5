@@ -33,7 +33,8 @@ public class VistaBuscarCliente extends javax.swing.JInternalFrame {
             }
         });
     }
-
+    
+  
     @SuppressWarnings("unchecked")
 
 
@@ -258,6 +259,16 @@ public class VistaBuscarCliente extends javax.swing.JInternalFrame {
 
     private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
         // TODO add your handling code here:
+         String texto = jTextField1.getText().trim();
+    DefaultListModel<Long> modeloFiltrado = new DefaultListModel<>();
+
+    for(Long telefono : VistaPrincipal.directorio.getMapaContactos().keySet()){
+        if (String.valueOf(telefono).startsWith(texto)) {
+            modeloFiltrado.addElement(telefono);
+        }
+    }
+
+    jList1.setModel(modeloFiltrado);
     }//GEN-LAST:event_jTextField1KeyReleased
 
 
